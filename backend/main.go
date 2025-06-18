@@ -52,6 +52,12 @@ var err error
 
 // Task 1: Write code for DB initialization here
 
+func InitDB(){
+	db, err = sql.Open("mysql", "user:user@tcp(127.0.0.1:3306)/userdb")
+	if err!= nil {
+		panic(err.Error)
+	}
+}
 type CORSRouterDecorator struct {
 	R *mux.Router
 }
